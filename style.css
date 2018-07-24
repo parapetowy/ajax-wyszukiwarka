@@ -1,0 +1,22 @@
+body {
+	margin: 0 auto;
+	padding: 20px;
+	color: #036564;
+	background-color: #E8DDCB;
+}
+
+img {
+	height: 150px;
+	border: 2px solid;
+}
+
+.result {
+	padding: 10px;
+	background-color: #CDB380;
+	border: 2px solid;
+}
+
+.result li {
+	color: #033649;
+	padding: 5px;
+}
