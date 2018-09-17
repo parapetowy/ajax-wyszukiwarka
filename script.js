@@ -13,19 +13,17 @@ function searchCountries() {
         .then(function(resp) {
             return resp.json();
         })
-        .then(showCountriesList);
+        .then(showCountriesList)
+        .catch(function(error) {
+            console.log(error.name);   
+        })
+        ;
 }
 
 function showCountriesList(resp) {
     countriesList.innerHTML = '';
     flagContainer.innerHTML = '';
 
-    /*for (var i = 0; i < resp.length; i++) {
-        var ul = document.createElement('ul');
-        countriesList.appendChild(ul);
-        var ulCountry = document.querySelectorAll('#countries ul');
-        ulCountry.innerHTML = 'gdsgsdgsdgs';*/
-        
         resp.forEach(function(item) {
 
             var name = document.createElement('li');
@@ -47,11 +45,4 @@ function showCountriesList(resp) {
             flagContainer.appendChild(flagPic);
 
         });
-        
-
-        console.log(ulCountry.length);
-
-    /*};*/
-
-
 }
