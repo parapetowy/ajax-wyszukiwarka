@@ -16,7 +16,11 @@ img {
 	border: 2px solid;
 }
 
-.result li {
+.result div {
 	color: #033649;
 	padding: 5px;
+}
+
+.result ul {
+	list-style-type: none;
 }

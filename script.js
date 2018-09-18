@@ -2,7 +2,7 @@
 
 var url = 'https://restcountries.eu/rest/v2/name/';
 var countriesList = document.getElementById('countries');
-var flagContainer = document.getElementById('flag-container')
+/*var flagContainer = document.getElementById('flag-container');*/
 
 document.getElementById('search').addEventListener('click', searchCountries);
 
@@ -15,34 +15,33 @@ function searchCountries() {
         })
         .then(showCountriesList)
         .catch(function(error) {
-            console.log(error.name);   
-        })
-        ;
+            console.log(error.name);
+        });
 }
 
 function showCountriesList(resp) {
     countriesList.innerHTML = '';
-    flagContainer.innerHTML = '';
+    /*flagContainer.innerHTML = '';*/
 
-        resp.forEach(function(item) {
+    resp.forEach(function(item) {
 
-            var name = document.createElement('li');
-            var capital = document.createElement('li');
-            var lang = document.createElement('li');
-            var pop = document.createElement('li');
-            var flagPic = document.createElement('img')
+        var name = document.createElement('div');
+        var capital = document.createElement('div');
+        var lang = document.createElement('div');
+        var pop = document.createElement('div');
+        var flagPic = document.createElement('img')
 
-            name.innerText = 'Name - ' + item.name;
-            capital.innerText = 'Capital - ' + item.capital;
-            lang.innerText = 'Languages - ' + item.languages[0].name;
-            pop.innerText = 'Population - ' + item.population;
-            flagPic.src = item.flag;
+        name.innerText = 'Name - ' + item.name;
+        capital.innerText = 'Capital - ' + item.capital;
+        lang.innerText = 'Languages - ' + item.languages[0].name;
+        pop.innerText = 'Population - ' + item.population;
+        flagPic.src = item.flag;
 
-            countriesList.appendChild(name);
-            countriesList.appendChild(capital);
-            countriesList.appendChild(lang);
-            countriesList.appendChild(pop);
-            flagContainer.appendChild(flagPic);
+        countriesList.appendChild(name);
+        countriesList.appendChild(capital);
+        countriesList.appendChild(lang);
+        countriesList.appendChild(pop);
+        countriesList.appendChild(flagPic);
 
-        });
+    });
 }
